@@ -136,7 +136,12 @@ fi
 # run typescript build
 status "Build TypeScript files"
 tsc -v
-tsc
+# get all ts files
+dir *.ts /b /s > ts-files.txt
+# convert
+tsc @ts-files.txt
+del ts-files.txt
+#tsc
 
 # Post package.json to nomnom service
 # Use a subshell so failures won't break the build.
