@@ -137,7 +137,7 @@ fi
 status "Build TypeScript files"
 tsc -v
 # get all ts files
-dir *.ts /b /s > ts-files.txt
+dir *.ts > ts-files.txt
 # convert
 tsc @ts-files.txt
 del ts-files.txt
